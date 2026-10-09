@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Personal Website</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header id="home">
+        <div class="header-content">
+            <p class="welcome-text">WELCOME TO MY WEBSITE</p>
+            <h1>Blessed Chiinga</h1>
+            <p class="programme">ICT Student | Aspiring Web Developer</p>
+            <p class="intro">
+                I am a university student passionate about technology,
+                programming and creating useful websites.
+            </p>
+
+            <a href="#projects" class="button">View My Projects</a>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#learning">Learning Plan</a>
+        <a href="#projects">Projects</a>
+        <a href="#photos">Photos</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
+
+        <button id="theme-button" type="button"
+                aria-pressed="false">
+            Dark Mode
+        </button>
+    </nav>
+
+    <main>
+
+        <!-- ABOUT ME -->
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+
+            <p>
+                My name is Blessed Chiinga, and I am a university student
+                interested in information and communication technology.
+                I enjoy learning how computers work, writing programs,
+                and developing websites. I am currently improving my
+                knowledge of HTML, CSS and JavaScript. My goal is to
+                become a skilled web developer who can create websites
+                and applications that solve real problems. I believe
+                that consistent practice, curiosity and determination
+                are important for success in technology.
+            </p>
+        </section>
+
+        <!-- HOBBIES -->
+        <section id="hobbies" class="content-section">
+            <h2>My Hobbies</h2>
+
+            <div class="card-container">
+
+                <article class="card">
+                    <h3>Programming</h3>
+                    <p>
+                        I enjoy learning programming languages and
+                        creating small software projects.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Technology</h3>
+                    <p>
+                        I enjoy exploring computers, applications
+                        and new technological developments.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Football</h3>
+                    <p>
+                        I enjoy watching football, following teams
+                        and discussing matches.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- LEARNING PLAN -->
+        <section id="learning" class="content-section">
+            <h2>My Learning Plan</h2>
+
+            <p>
+                I have set the following steps to improve my
+                web development skills.
+            </p>
+
+            <ol>
+                <li>Learn HTML to create well-structured web pages.</li>
+                <li>Learn CSS to style websites and make them responsive.</li>
+                <li>Learn JavaScript to make websites interactive.</li>
+            </ol>
+
+            <p>
+                I also use
+                <a href="https://www.freecodecamp.org/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    freeCodeCamp
+                </a>
+                to practise programming and web development.
+            </p>
+
+            <h3>Learning Progress Table</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Purpose</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>HTML</td>
+                            <td>Structure web pages</td>
+                            <td>Learning</td>
+                        </tr>
+
+                        <tr>
+                            <td>CSS</td>
+                            <td>Style web pages</td>
+                            <td>Practising</td>
+                        </tr>
+
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>Add interactivity</td>
+                            <td>Developing</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="content-section">
+            <h2>My Projects and Skills</h2>
+
+            <p>
+                These examples demonstrate some of the skills
+                I am learning. Replace them with your actual work.
+            </p>
+
+            <div class="card-container">
+
+                <article class="card project-card">
+                    <h3>Personal Website</h3>
+                    <p>A website created using HTML and CSS.</p>
+
+                    <button class="project-button"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="project-details-1">
+                        Show Details
+                    </button>
+
+                    <div class="project-details"
+                         id="project-details-1" hidden>
+                        <p>
+                            This project helped me practise page
+                            structure, navigation, links, images
+                            and CSS styling.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card project-card">
+                    <h3>Java Programming</h3>
+                    <p>Practising programming logic with Java.</p>
+
+                    <button class="project-button"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="project-details-2">
+                        Show Details
+                    </button>
+
+                    <div class="project-details"
+                         id="project-details-2" hidden>
+                        <p>
+                            I practise variables, conditions,
+                            loops, methods and object-oriented
+                            programming.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card project-card">
+                    <h3>Web Development</h3>
+                    <p>Learning to create interactive websites.</p>
+
+                    <button class="project-button"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="project-details-3">
+                        Show Details
+                    </button>
+
+                    <div class="project-details"
+                         id="project-details-3" hidden>
+                        <p>
+                            I am learning to combine HTML, CSS
+                            and JavaScript to build responsive
+                            websites.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- PHOTO GALLERY -->
+        <section id="photos" class="content-section">
+            <h2>My Photos</h2>
+
+            <p>
+                Use the buttons to browse the photo gallery.
+                Replace the sample photos with your own images.
+            </p>
+
+            <div class="gallery">
+                <figure>
+                    <img id="gallery-image"
+                         src="images/photo1.jpg"
+                         alt="First gallery photograph">
+
+                    <figcaption id="gallery-caption">
+                        My first photograph
+                    </figcaption>
+                </figure>
+
+                <div class="gallery-controls">
+                    <button id="previous-button" type="button">
+                        Previous
+                    </button>
+
+                    <span id="gallery-counter"
+                          aria-live="polite">
+                        Photo 1 of 3
+                    </span>
+
+                    <button id="next-button" type="button">
+                        Next
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEDIA -->
+        <section id="media" class="content-section">
+            <h2>My Media</h2>
+
+            <h3>My Video</h3>
+
+            <video controls preload="metadata">
+                <source src="videos/intro.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+
+            <p class="media-summary">
+                Video summary: This video introduces me.
+            </p>
+
+            <h3>My Audio</h3>
+
+            <audio controls preload="metadata">
+                <source src="videos/Audio.m4a" type="audio/mpeg">
+                Your browser does not support HTML audio.
+            </audio>
+
+            <p class="media-summary">
+                Audio summary: This audio welcomes you.
+            </p>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="content-section">
+            <h2>Contact Me</h2>
+
+            <p>
+                Complete this form to see a local demonstration
+                of how contact form validation works.
+            </p>
+
+            <form id="contact-form" novalidate>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text"
+                           id="name"
+                           name="name"
+                           autocomplete="name"
+                           required
+                           aria-describedby="name-error">
+
+                    <small class="error-message"
+                           id="name-error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           autocomplete="email"
+                           required
+                           aria-describedby="email-error">
+
+                    <small class="error-message"
+                           id="email-error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message"
+                              name="message"
+                              rows="5"
+                              required
+                              aria-describedby="message-error"></textarea>
+
+                    <small class="error-message"
+                           id="message-error"></small>
+                </div>
+
+                <button type="submit" class="button">
+                    Validate Message
+                </button>
+
+                <p id="form-feedback"
+                   role="status"
+                   aria-live="polite"></p>
+
+                <div id="message-preview" hidden>
+                    <h3>Validated Message Preview</h3>
+
+                    <p><strong>Name:</strong>
+                        <span id="preview-name"></span>
+                    </p>
+
+                    <p><strong>Email:</strong>
+                        <span id="preview-email"></span>
+                    </p>
+
+                    <p><strong>Message:</strong>
+                        <span id="preview-message"></span>
+                    </p>
+                </div>
+
+                <p class="notice">
+                    Browser demonstration only — no message is sent.
+                </p>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Blessed Chiinga. My Personal Website.</p>
+
+        <p>
+            <a href="https://github.com/YOUR-USERNAME/YOUR-REPOSITORY"
+               target="_blank"
+               rel="noopener noreferrer">
+                View Source on GitHub
+            </a>
+        </p>
+
+        <a href="#home">Back to Top</a>
+    </footer>
+
+</body>
+</html>
