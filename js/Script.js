@@ -162,15 +162,6 @@ projectButtons.forEach(function (button) {
 });
 
 
-/* ==========================================
-   3. PHOTO GALLERY — NAVIGATION & KEYBOARD
-   ========================================== */
-
-
-/* ==========================================
-   PHOTO GALLERY
-   ========================================== */
-
 // Paths are relative to index.html's folder.
 const photos = [
     {
@@ -346,6 +337,44 @@ navigationLinks.forEach(function (link) {
         }
     });
 });
+
+
+/* =========================================
+   DARK / LIGHT MODE BUTTON
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const themeButton = document.getElementById("theme-button");
+
+    if (!themeButton) {
+        console.error("Theme button was not found.");
+        return;
+    }
+
+    function updateButton() {
+        const lightMode =
+            document.body.getAttribute("data-theme") === "light";
+
+        themeButton.textContent = lightMode ? "Dark Mode" : "Light Mode";
+        themeButton.setAttribute("aria-pressed", String(lightMode));
+    }
+
+    themeButton.addEventListener("click", function () {
+        const isLight =
+            document.body.getAttribute("data-theme") === "light";
+
+        if (isLight) {
+            document.body.removeAttribute("data-theme");
+        } else {
+            document.body.setAttribute("data-theme", "light");
+        }
+
+        updateButton();
+    });
+
+    updateButton();
+});
+
 
 
 /* ==========================================
