@@ -166,19 +166,25 @@ projectButtons.forEach(function (button) {
    3. PHOTO GALLERY — NAVIGATION & KEYBOARD
    ========================================== */
 
+
+/* ==========================================
+   PHOTO GALLERY
+   ========================================== */
+
+// Paths are relative to index.html's folder.
 const photos = [
     {
-        src: "images/photo1.jpg",
+        src: "./image/photo1.jpg",
         alt: "First gallery photograph",
         caption: "My first photograph"
     },
     {
-        src: "images/photo2.jpg",
+        src: "./image/photo2.jpg",
         alt: "Second gallery photograph",
         caption: "My second photograph"
     },
     {
-        src: "images/photo3.jpg",
+        src: "./image/photo3.jpg",
         alt: "Third gallery photograph",
         caption: "My third photograph"
     }
@@ -194,37 +200,38 @@ const previousButton = document.getElementById("previous-button");
 const nextButton = document.getElementById("next-button");
 
 function showPhoto(index) {
+    if (index < 0 || index >= photos.length) return;
+
     if (
         !galleryImage ||
         !galleryCaption ||
         !galleryCounter ||
         !previousButton ||
-        !nextButton ||
-        index < 0 ||
-        index >= photos.length
+        !nextButton
     ) {
+        console.error(
+            "Gallery HTML is missing one or more required element IDs."
+        );
         return;
     }
 
     currentPhoto = index;
     const photo = photos[currentPhoto];
 
-    galleryImage.classList.add("photo-changing");
+    galleryImage.onerror = function () {
+        console.error("Could not load image:", photo.src);
 
-    galleryImage.onload = function () {
-        galleryImage.classList.remove("photo-changing");
+        galleryCaption.textContent =
+            photo.caption + " — image not found. Check the file path.";
     };
 
-    galleryImage.onerror = function () {
-        galleryImage.classList.remove("photo-changing");
-        galleryCaption.textContent =
-            photo.caption + " — image could not be loaded.";
+    galleryImage.onload = function () {
+        galleryCaption.textContent = photo.caption;
     };
 
     galleryImage.src = photo.src;
     galleryImage.alt = photo.alt;
 
-    galleryCaption.textContent = photo.caption;
     galleryCounter.textContent =
         `Photo ${currentPhoto + 1} of ${photos.length}`;
 
@@ -243,32 +250,6 @@ if (nextButton) {
         showPhoto(currentPhoto + 1);
     });
 }
-
-// Allow left and right arrow keys to navigate the gallery.
-document.addEventListener("keydown", function (event) {
-    const tag = document.activeElement?.tagName;
-
-    if (
-        tag === "INPUT" ||
-        tag === "TEXTAREA" ||
-        tag === "SELECT" ||
-        event.altKey ||
-        event.ctrlKey ||
-        event.metaKey
-    ) {
-        return;
-    }
-
-    if (event.key === "ArrowLeft" && previousButton &&
-        !previousButton.disabled) {
-        showPhoto(currentPhoto - 1);
-    }
-
-    if (event.key === "ArrowRight" && nextButton &&
-        !nextButton.disabled) {
-        showPhoto(currentPhoto + 1);
-    }
-});
 
 showPhoto(0);
 
